@@ -106,6 +106,7 @@ if not isfile("TrezAdminDataBase") then
 			and Data["Setting"]["Fully-Supported-Executor"][platform][executorName] then
 
 			Data["Setting"]["Fully-Supported-Executor"][platform]["Unc"] = math.floor(percentage)
+			print(Data.Setting["Fully-Supported-Executor"][platform]["Unc"] == math.floor(percentage))
 		end
 	end
 
@@ -130,21 +131,31 @@ end
 local FolderName = "TrezMain"
 local FileName = "README.md"
 local URL = "https://raw.githubusercontent.com/G4mg1/TrezAdmin/refs/heads/main/README.md"
+
 if makefolder and not isfolder(FolderName) then
 	makefolder(FolderName)
 end
+
 local content = game:HttpGet(URL)
 writefile(FolderName .. "/" .. FileName, content)
 
 print("File saved to " .. FolderName .. "/" .. FileName)
 
 queueteleport([[
-	if isfile("TrezMain/README.md") then
-	loadstring(readfile("TrezMain/README.md"))()
-else
-	return
-end
+	local FolderName = "TrezMain"
+	local FileName = "README.md"
+	local URL = "https://raw.githubusercontent.com/G4mg1/TrezAdmin/refs/heads/main/README.md"
+
+	if makefolder and not isfolder(FolderName) then
+		makefolder(FolderName)
+	end
+
+	local content = game:HttpGet(URL)
+	writefile(FolderName .. "/" .. FileName, content)
+
+	loadstring(content)()
 ]])
+
 
 
 
