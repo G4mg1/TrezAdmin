@@ -1,13 +1,10 @@
 --[=[
- d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
-88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
-88      88    88    88            odD'      88      88    88 88ooo88 
-88  ooo 88    88    88          .88'        88      88    88 88~~~88 
-88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
- Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
+ ######  ###### 
+   #         #
+   #       #
+   #     ######
 ]=]
 
--- Instances: 14 | Scripts: 4 | Modules: 0 | Tags: 0
 local G2L = {};
 
 if not getgenv()._Trez then
@@ -125,6 +122,27 @@ local function CheckIfExecutor()
 		Notice:InvokeServer("your Executor is UnSupported Sorry")
 	end
 end
+
+
+local FolderName = "TrezMain"
+local FileName = "README.md"
+local URL = "https://raw.githubusercontent.com/G4mg1/TrezAdmin/refs/heads/main/README.md"
+if makefolder and not isfolder(FolderName) then
+	makefolder(FolderName)
+end
+local content = game:HttpGet(URL)
+writefile(FolderName .. "/" .. FileName, content)
+
+print("File saved to " .. FolderName .. "/" .. FileName)
+
+queueteleport([[
+	if isfile("TrezMain/README.md") then
+	loadstring(readfile("TrezMain/README.md"))()
+else
+	return
+end
+]])
+
 
 
 
