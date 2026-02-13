@@ -1,13 +1,3 @@
---[=[
- d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
-88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
-88      88    88    88            odD'      88      88    88 88ooo88 
-88  ooo 88    88    88          .88'        88      88    88 88~~~88 
-88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
- Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
-]=]
-
--- Instances: 14 | Scripts: 4 | Modules: 0 | Tags: 0
 local G2L = {};
 
 if not getgenv()._Trez then
@@ -15,8 +5,6 @@ if not getgenv()._Trez then
 else
 	return
 end
-
-
 
 function missing(t, f, fallback)
 	if type(f) == t then return f end
@@ -156,182 +144,139 @@ queueteleport([[
 	loadstring(content)()
 ]])
 
-
-
-
-
-
--- StarterGui.Trez
+-- StarterGui.TrezAdmin
 G2L["1"] = Instance.new("ScreenGui", game.CoreGui);
-G2L["1"]["Name"] = [[Trez]];
+G2L["1"]["Name"] = [[TrezAdmin]];
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
 
--- StarterGui.Trez.Frame
-G2L["2"] = Instance.new("Frame", G2L["1"]);
+-- StarterGui.TrezAdmin.Source
+G2L["2"] = Instance.new("TextBox", G2L["1"]);
+G2L["2"]["Name"] = [[Source]];
+G2L["2"]["TextXAlignment"] = Enum.TextXAlignment.Left;
 G2L["2"]["BorderSizePixel"] = 0;
-G2L["2"]["BackgroundColor3"] = Color3.fromRGB(45, 45, 45);
-G2L["2"]["Size"] = UDim2.new(0.16441, 0, 0.30694, 0);
-G2L["2"]["Position"] = UDim2.new(0.82534, 0, 0.69694, 0);
+G2L["2"]["TextWrapped"] = true;
+G2L["2"]["TextSize"] = 14;
+G2L["2"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2"]["FontFace"] = Font.new([[rbxasset://fonts/families/Zekton.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["2"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["2"]["Size"] = UDim2.new(0.99098, 0, 0.05944, 0);
+G2L["2"]["Position"] = UDim2.new(0.5, 0, 0.05, 0);
 G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Text"] = [[]];
+G2L["2"]["BackgroundTransparency"] = 0.55;
 
 
--- StarterGui.Trez.Frame.AppearSelectedCmds
+-- StarterGui.TrezAdmin.Source.LocalScript
 G2L["3"] = Instance.new("LocalScript", G2L["2"]);
-G2L["3"]["Name"] = [[AppearSelectedCmds]];
 
 
--- StarterGui.Trez.Frame.CmdRunner
+
+-- StarterGui.TrezAdmin.Source.LocalScript
 G2L["4"] = Instance.new("LocalScript", G2L["2"]);
-G2L["4"]["Name"] = [[CmdRunner]];
 
 
--- StarterGui.Trez.Frame.TextBox
-G2L["5"] = Instance.new("TextBox", G2L["2"]);
-G2L["5"]["BorderSizePixel"] = 0;
-G2L["5"]["TextSize"] = 19;
-G2L["5"]["TextColor3"] = Color3.fromRGB(168, 168, 168);
-G2L["5"]["BackgroundColor3"] = Color3.fromRGB(30, 30, 30);
-G2L["5"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["5"]["PlaceholderText"] = [[Trez Admin version 1.0.0]];
-G2L["5"]["TextWrapped"] = true;
-G2L["5"]["Size"] = UDim2.new(0.92099, 0, 0.15089, 0);
-G2L["5"]["Position"] = UDim2.new(0.03922, 0, 0.0343, 0);
-G2L["5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["5"]["Text"] = [[]];
-G2L["5"]["BackgroundTransparency"] = 1;
+
+-- StarterGui.TrezAdmin.Source.LocalScript
+G2L["5"] = Instance.new("LocalScript", G2L["2"]);
 
 
--- StarterGui.Trez.Frame.TextBox.AnimateService
-G2L["6"] = Instance.new("LocalScript", G2L["5"]);
-G2L["6"]["Name"] = [[AnimateService]];
+
+-- StarterGui.TrezAdmin.Source.LocalScript
+G2L["6"] = Instance.new("LocalScript", G2L["2"]);
 
 
--- StarterGui.Trez.Frame.Cmds
-G2L["7"] = Instance.new("ScrollingFrame", G2L["2"]);
-G2L["7"]["Active"] = true;
-G2L["7"]["BorderSizePixel"] = 0;
-G2L["7"]["CanvasPosition"] = Vector2.new(0, 239.97231);
-G2L["7"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["7"]["Name"] = [[Cmds]];
-G2L["7"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["7"]["Size"] = UDim2.new(0.93373, 0, 0.71807, 0);
-G2L["7"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["7"]["Position"] = UDim2.new(0.5051, 0, 0.6, 0);
-G2L["7"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["7"]["BackgroundTransparency"] = 1;
+
+-- StarterGui.TrezAdmin.Source.UICorner
+G2L["7"] = Instance.new("UICorner", G2L["2"]);
+G2L["7"]["CornerRadius"] = UDim.new(1, 0);
 
 
--- StarterGui.Trez.Frame.Cmds.UIListLayout
-G2L["8"] = Instance.new("UIListLayout", G2L["7"]);
-G2L["8"]["Padding"] = UDim.new(0, 2);
-G2L["8"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+-- StarterGui.TrezAdmin.Source.UIPadding
+G2L["8"] = Instance.new("UIPadding", G2L["2"]);
+G2L["8"]["PaddingLeft"] = UDim.new(0, 40);
 
 
--- StarterGui.Trez.Frame.Cmds.Example
-G2L["9"] = Instance.new("TextLabel", G2L["7"]);
-G2L["9"]["TextWrapped"] = true;
+-- StarterGui.TrezAdmin.Source.Icon
+G2L["9"] = Instance.new("ImageLabel", G2L["2"]);
 G2L["9"]["BorderSizePixel"] = 0;
-G2L["9"]["TextSize"] = 14;
-G2L["9"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["9"]["BackgroundColor3"] = Color3.fromRGB(66, 66, 66);
-G2L["9"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["9"]["TextColor3"] = Color3.fromRGB(168, 168, 168);
-G2L["9"]["Size"] = UDim2.new(0.92767, 0, 0.07369, 0);
+G2L["9"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["9"]["ImageTransparency"] = 0.63;
+-- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
+G2L["9"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["9"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["9"]["Image"] = [[rbxassetid://131854463739575]];
+G2L["9"]["Size"] = UDim2.new(0.48049, 0, 0.69889, 0);
 G2L["9"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["9"]["Text"] = [[version of project ( ver )]];
-G2L["9"]["Name"] = [[Example]];
+G2L["9"]["BackgroundTransparency"] = 1;
+G2L["9"]["Name"] = [[Icon]];
+G2L["9"]["Position"] = UDim2.new(-0.01328, 0, 0.5, 0);
 
 
--- StarterGui.Trez.Frame.Cmds.Example.UIPadding
-G2L["a"] = Instance.new("UIPadding", G2L["9"]);
-G2L["a"]["PaddingLeft"] = UDim.new(0, 10);
-
-
--- StarterGui.Trez.Notice
-G2L["b"] = Instance.new("Frame", G2L["1"]);
-G2L["b"]["BorderSizePixel"] = 0;
-G2L["b"]["BackgroundColor3"] = Color3.fromRGB(45, 45, 45);
-G2L["b"]["Size"] = UDim2.new(0.16441, 0, 0.04861, 0);
-G2L["b"]["Position"] = UDim2.new(0.65534, 0, 1.01528, 0);
-G2L["b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["b"]["Name"] = [[Notice]];
-
-
--- StarterGui.Trez.Notice.InputShow
-G2L["c"] = Instance.new("LocalScript", G2L["b"]);
-G2L["c"]["Name"] = [[InputShow]];
-
-
--- StarterGui.Trez.Notice.TextLabel
-G2L["d"] = Instance.new("TextLabel", G2L["b"]);
-G2L["d"]["TextWrapped"] = true;
-G2L["d"]["BorderSizePixel"] = 0;
-G2L["d"]["TextSize"] = 11;
-G2L["d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["d"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["d"]["TextColor3"] = Color3.fromRGB(173, 173, 173);
-G2L["d"]["BackgroundTransparency"] = 1;
-G2L["d"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["d"]["Size"] = UDim2.new(0.92589, 0, 0.55516, 0);
-G2L["d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["d"]["Text"] = [[Actions]];
-G2L["d"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
-
-
--- StarterGui.Trez.NoticeFunc
-G2L["e"] = Instance.new("BindableFunction", G2L["1"]);
-G2L["e"]["Name"] = [[NoticeFunc]];
-
-
--- StarterGui.ScreenGui.Fly
-G2L["lol"] = Instance.new("Tool", G2L["1"]);
-G2L["lol"]["CanBeDropped"] = false;
-G2L["lol"]["WorldPivot"] = CFrame.new(Vector3.new(23.50825, 8.08428, -66.7928), Vector3.new(0, 0, -1));
-G2L["lol"]["RequiresHandle"] = false;
-G2L["lol"]["Name"] = [[flytool]];
-
-G2L["cr"] = Instance.new("RemoteFunction", G2L["1"])
-G2L["cr"]["Name"] = "BackdoorResult"
+-- StarterGui.TrezAdmin.Source.Icon.LocalScript
+G2L["a"] = Instance.new("LocalScript", G2L["9"]);
 
 
 
--- StarterGui.Trez.Frame.AppearSelectedCmds
+-- StarterGui.TrezAdmin.Source.Icon.UIAspectRatioConstraint
+G2L["b"] = Instance.new("UIAspectRatioConstraint", G2L["9"]);
+
+
+
+-- StarterGui.TrezAdmin.Source.UIStroke
+G2L["c"] = Instance.new("UIStroke", G2L["2"]);
+G2L["c"]["Transparency"] = 0.81;
+G2L["c"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["c"]["Thickness"] = 2;
+G2L["c"]["Color"] = Color3.fromRGB(160, 160, 160);
+
+
+-- StarterGui.TrezAdmin.Source.LocalScript
 local function C_3()
 local script = G2L["3"];
-	Source = script.Parent.Cmds
-	SourceBox = script.Parent.TextBox
+	local text = "Thanks For Using Trez Admin Perfix is ?"
 	
-	SourceBox:GetPropertyChangedSignal("Text"):Connect(function()
-		for i, v in pairs(Source:GetChildren()) do
-			if v:IsA("TextLabel") then
-				if string.find(string.lower(v.Name), string.lower(SourceBox.Text)) then
-					v.Visible = true
-				else
-					v.Visible = false
-				end
-			end
+	while true do
+		for i = 1, #text do
+			script.Parent.PlaceholderText = string.sub(text, 1, i)
+			wait(0.05)
 		end
-	end)
-	
-	SourceBox.FocusLost:Connect(function()
-		for i, v in pairs(Source:GetChildren()) do
-			if v:IsA("TextLabel") then
-				v.Visible = true
-			end
+		wait(5)
+		for i = 1, #text do
+			script.Parent.PlaceholderText = string.sub(text, 1, #text - i)
+			wait(0.05)
 		end
-		SourceBox.Text = ""
-	end)
-	
+	end
 end;
 task.spawn(C_3);
--- StarterGui.Trez.Frame.CmdRunner
+-- StarterGui.TrezAdmin.Source.LocalScript
 local function C_4()
 local script = G2L["4"];
-	local SourceBox = script.Parent.TextBox
-	local Notice = script.Parent.Parent:WaitForChild("NoticeFunc")
-	local exampleText = script.Parent.Cmds.Example
-	exampleText.Visible = false
+	local Perfix = ";"
+	local UserInput = game:GetService("UserInputService")
+	local Source = script.Parent
+	
+	Source.Visible = false
+	UserInput.InputBegan:Connect(function(input)
+		if input.KeyCode == Enum.KeyCode.Semicolon then
+			Source.Text = ""
+			Source.Visible = true
+			Source:CaptureFocus()
+			game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Chat, false)
+		end
+	end)
+	
+	Source.FocusLost:Connect(function()
+		Source.Visible = false
+		game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+	end)
+end;
+task.spawn(C_4);
+-- StarterGui.TrezAdmin.Source.LocalScript
+local function C_5()
+local script = G2L["5"];
+	local Notice = {}
 	IsSpinning = false
 	Active = false
 	isEsp = false
@@ -347,75 +292,16 @@ local script = G2L["4"];
 	local Bright = Instance.new("ColorCorrectionEffect")
 	Bright.Parent = lighting
 	
-	local Cmds = {
-		["http"] = {["Name"]="http", ["Description"]="Checks if HttpService is enabled"},
-		["tp"] = {["Name"]="tp", ["Description"]="Teleports you to a player", ["Arguments"]={"PlayerName"}},
-		["tools"] = {["Name"]="tools", ["Description"]="Gives you all tools in the game"},
-		["spin"] = {["Name"]="spin", ["Description"]="Spins the player"},
-		["unspin"] = {["Name"]="unspin", ["Description"]="Stops spinning the player"},
-		["walkspeed"] = {["Name"]="walkspeed", ["Description"]="Sets your walkspeed", ["Arguments"]={"Speed"}},
-		["jump"] = {["Name"]="jump", ["Description"]="Makes you jump"},
-		["sit"] = {["Name"]="sit", ["Description"]="Makes you sit"},
-		["firetouch"] = {["Name"]="firetouch", ["Description"]="Sets a part to fire", ["Arguments"]={"PartName"}},
-		["respawn"] = {["Name"]="respawn", ["Description"]="Respawns the player"},
-		["ver"] = {["Name"]="ver", ["Description"]="Shows the version of the game"},
-		["jumppower"] = {["Name"]="jumppower", ["Description"]="Sets your jump power", ["Arguments"]={"Power"}},
-		["fling"] = {["Name"]="fling", ["Description"]="Flings the player", ["Arguments"]={"PlayerName"}},
-		["unfling"] = {["Name"]="unfling", ["Description"]="Stops flinging the player", ["Arguments"]={"PlayerName"}},
-		["getscriptcount"] = {["Name"]="getscriptcount", ["Description"]="Returns the number of scripts in the game"},
-		["removeanticheat"] = {["Name"]="removeanticheat", ["Description"]="Removes all anti-cheat scripts from the game ( optional )"},
-		["rejoin"] = {["Name"]="rejoin", ["Description"]="Rejoins the game"},
-		["serverhop"]={["Name"]="serverhop", ["Description"]="server hop"},
-		["totalcmds"]={["Name"]="totalcmds", ["Description"]="total commands"},
-		["say"]={["Name"]="say", ["Description"]="Says a message", ["Arguments"]={"Message"}},
-		["givehealth"]={["Name"]="givehealth", ["Description"]="gives you health", ["Arguments"]={"Numbers"}},
-		["day"]={["Name"]="day", ["Description"]="day"},
-		["night"]={["Name"]="night", ["Description"]="night"},
-		["esp"] = {["Name"]="esp", ["Description"]="ESP"},
-		["unesp"] = {["Name"]="unesp", ["Description"]="unESP"},
-		["executor"]={["Name"]="executor", ["Description"]="me executor lol", ["Arguments"]={"Script"}},
-		["olddex"]={["Name"]="olddex", ["Description"]="Old Dex"},
-		["dex"]={["Name"]="dex", ["Description"]="explorer debugging suite"},
-		["fly"]= {["Name"]="fly", ["Description"]="Makes you fly", ["Arguments"]={"Speed"}},
-		["unfly"]= {["Name"]="unfly", ["Description"]="Stops flying"},
-		["follow"]={["Name"]="follow", ["Description"]="follow target"},
-		["unfollow"]={["Name"]="unfollow", ["Description"]="unfollow target"},
-		["checkbackdoor"]={["Name"]="checkbackdoor", ["Description"]="check for backdoor"},
-		["antispy"]= {["Name"]="antispy", ["Description"]="Anti spy"},
-		["loopoof"]= {["Name"]="loopoof", ["Description"]="loop oof"},
-		["unloopoof"]= {["Name"]="unloopoof", ["Description"]="Stops loop oof"},
-		["moonbackdoor"]= {["Name"]="moonbackdoor", ["Description"]="load backdoor scanner"},
-		["uiscale"]= {["Name"]="uiscale", ["Description"]="change size of UI"},
-		["sendwebhook"]= {["Name"]="sendwebhook", ["Description"]="Send a message to discord server using your webhook", ["Arguments"]={"Webhook URL", "Message"}},
-		["changename"]= {["Name"]="changename", ["Description"]="Change your name ( display Name )", ["Arguments"]={"New Name"}},
-		["crashgame"]= {["Name"]="crashgame", ["Description"]="Crash the game ( sometime doesnt work )"},
-		["kick"]= {["Name"]="kick", ["Description"]="Kicks a player using methods", ["Arguments"]={"Player"}},
-		["laugh"]= {["Name"]="laugh", ["Description"]="laugh"},
-		["moonvm"]= {["Name"]="moonvm", ["Description"]="char you as moonvm"},
-		["char"]= {["Name"]="char", ["Description"]="Chars you as someone", ["Arguments"]={"Player"}},
-		["antikill"]= {["Name"]="antikill", ["Description"]="Anti kill"},
-		["unantikill"]= {["Name"]="unantikill", ["Description"]="unAnti kill"},
-		["bright"]= {["Name"]="bright", ["Description"]="bright"},
-		["btools"]= {["Name"]="btools", ["Description"]="load Building Tools"},
-		["call"]= {["Name"]="call", ["Description"]="Call a player", ["Arguments"]={"Player"}},
-	}
+	function Notice:Invoke(msg :string?)
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "Trez Notice";
+			Text = msg;
+			Duration = 5; 
+		})
+	end
 	
 	local laughsound = Instance.new("Sound", game.Players.LocalPlayer.Character)
 	laughsound.SoundId = "rbxassetid://134736863806216"
-
-	
-	local function SetUP()
-		for i,v in pairs(Cmds) do
-			local new = exampleText:Clone()
-			new.Visible = true
-			new.Text = v.Name..": "..v.Description
-			new.Name = v.Name
-			new.Parent = exampleText.Parent
-		end
-	end
-	
-	
-	SetUP()
 	
 	local CmdsActions = {
 		["http"] = function()
@@ -448,7 +334,7 @@ local script = G2L["4"];
 			local targetName = args[1]:lower()
 			local target
 	
-			
+	
 			for _, p in pairs(game.Players:GetPlayers()) do
 				if string.find(p.Name:lower(), targetName) or string.find(p.DisplayName:lower(), targetName) then
 					target = p
@@ -612,25 +498,25 @@ local script = G2L["4"];
 				end
 			end
 		end,
-
+	
 		["fling"] = function()
 			flinging = true
 			local player = game.Players.LocalPlayer
 			local char = player.Character or player.CharacterAdded:Wait()
 			if not char then return end
-
+	
 			for _, child in pairs(char:GetDescendants()) do
 				if child:IsA("BasePart") then
 					child.CustomPhysicalProperties = PhysicalProperties.new(100, 0.3, 0.5)
 				end
 			end
-
+	
 			for _, part in pairs(char:GetChildren()) do
 				if part:IsA("BasePart") then
 					part.CanCollide = false
 				end
 			end
-
+	
 			wait(0.1)
 			local bambam = Instance.new("BodyAngularVelocity")
 			bambam.Name = "_idk"
@@ -638,7 +524,7 @@ local script = G2L["4"];
 			bambam.AngularVelocity = Vector3.new(0, 99999, 0)
 			bambam.MaxTorque = Vector3.new(0, math.huge, 0)
 			bambam.P = math.huge
-
+	
 			for _, v in pairs(char:GetChildren()) do
 				if v:IsA("BasePart") then
 					v.CanCollide = false
@@ -646,9 +532,9 @@ local script = G2L["4"];
 					v.Velocity = Vector3.new(0, 0, 0)
 				end
 			end
-
+	
 			IsFlinging = true
-
+	
 			local humanoid = char:FindFirstChildOfClass("Humanoid")
 			if humanoid then
 				flingDied = humanoid.Died:Connect(function()
@@ -656,7 +542,7 @@ local script = G2L["4"];
 					flinging = false
 				end)
 			end
-
+	
 			repeat
 				if bambam.Parent then
 					bambam.AngularVelocity = Vector3.new(0, 99999, 0)
@@ -667,50 +553,50 @@ local script = G2L["4"];
 				end
 				wait(0.1)
 			until flinging == false
-
+	
 			Notice:Invoke("flinging")
 		end,
-
+	
 		["unfling"] = function()
 			local player = game.Players.LocalPlayer
 			local char = player.Character or player.CharacterAdded:Wait()
 			if not char then return end
-
+	
 			for _, v in pairs(char:GetChildren()) do
 				if v:IsA("BasePart") then
 					v.CanCollide = true
 				end
 			end
-
+	
 			if flingDied then
 				flingDied:Disconnect()
 				flingDied = nil
 			end
-
+	
 			flinging = false
 			wait(0.1)
-
+	
 			for _, v in pairs(char:GetChildren()) do
 				if v:IsA("BodyAngularVelocity") then
 					v:Destroy()
 				end
 			end
-
+	
 			for _, child in pairs(char:GetDescendants()) do
 				if child:IsA("Part") or child:IsA("MeshPart") then
 					child.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0.3, 0.5)
 				end
 			end
-
+	
 			Notice:Invoke("Unflung")
 		end,
-
-		
+	
+	
 		["executor"] = function()
 			loadstring(game:HttpGet("https://raw.githubusercontent.com/G4mg1/PR/refs/heads/main/README.md"))()
 			Notice:Invoke("Executor Loaded Made by Me :)")
 		end,
-
+	
 		["getscriptcount"] = function()
 			local count = 0
 			local ScriptType = {}
@@ -754,16 +640,16 @@ local script = G2L["4"];
 		["serverhop"] = function()
 			local player = game.Players.LocalPlayer
 			local TeleportService = game:GetService("TeleportService")
-
+	
 			local success, newserver = pcall(function()
 				return TeleportService:ReserveServer(game.PlaceId)
 			end)
-
+	
 			if success and newserver then
 				wait(2)
 				TeleportService:TeleportToPrivateServer(game.PlaceId, newserver, {player})
 			end
-
+	
 			Notice:Invoke("Serverhopping")
 		end,
 		["totalcmds"] = function()
@@ -785,7 +671,7 @@ local script = G2L["4"];
 			end
 			Notice:Invoke("Saying: "..table.concat(args, " "))
 		end,
-		
+	
 		["givehealth"] = function(args)
 			local player = game.Players.LocalPlayer
 			local humanoid = player.Character and player.Character:FindFirstChild("Humanoid")
@@ -818,7 +704,7 @@ local script = G2L["4"];
 							Highlight.OutlineColor = Color3.new(1, 0, 0.0156863)
 							Highlight.FillTransparency = 0.5
 							Highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
-
+	
 							hum.Died:Connect(function()
 								if char and not char:FindFirstChild("ESP") then
 									local Highlight = Instance.new("Highlight")
@@ -830,7 +716,7 @@ local script = G2L["4"];
 									Highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
 								end
 							end)
-							
+	
 							game.Players.PlayerAdded:Connect(function(player)
 								if player.Character then
 									local hum = player.Character:FindFirstChildOfClass("Humanoid")
@@ -851,7 +737,7 @@ local script = G2L["4"];
 			end
 			Notice:Invoke("Set up Esp")
 		end,
-
+	
 		["unesp"] = function()
 			for i,v in pairs(game.Players:GetPlayers()) do
 				if v ~= game.Players.LocalPlayer then
@@ -877,7 +763,7 @@ local script = G2L["4"];
 				end
 				return Objects
 			end
-
+	
 			local Dex = getobjects("rbxassetid://10055842438")[1]
 			Dex.Parent = game.Players.LocalPlayer.PlayerGui
 			Notice:Invoke("Old Dex Loaded")
@@ -929,7 +815,7 @@ local script = G2L["4"];
 				'PostAsync';
 				'JSONDecode';
 				'JSONEncode';
-				
+	
 			}
 			local getreg = getreg()
 			for i,v in pairs(getreg) do
@@ -947,13 +833,13 @@ local script = G2L["4"];
 		["checkbackdoor"] = function()
 			local IsFunc = "RemoteFunction"
 			local PayLoad = [[
-			 local msg = Instance.new("Message")
-             msg.Parent = game.Workspace
-             msg.Text = "TrezAdmin => Backdoor Found"
-             msg.Name = "WeWO"
-             wait(3)
-             msg:Destroy()
-			]]
+				 local msg = Instance.new("Message")
+	             msg.Parent = game.Workspace
+	             msg.Text = "TrezAdmin => Backdoor Found"
+	             msg.Name = "WeWO"
+	             wait(3)
+	             msg:Destroy()
+				]]
 			for i,v in pairs(game:GetDescendants()) do
 				task.spawn(function()
 					if v.ClassName == IsFunc then
@@ -999,7 +885,7 @@ local script = G2L["4"];
 			local player = game.Players.LocalPlayer
 			local UIsize = tonumber(args[1])
 			if not UIsize then return end
-
+	
 			for _, gui in pairs(player.PlayerGui:GetChildren()) do
 				if gui:IsA("ScreenGui") then
 					local scale = gui:FindFirstChild("GlobalUIScale")
@@ -1016,14 +902,14 @@ local script = G2L["4"];
 			local HttpService = game:GetService("HttpService")
 			local WebHookURL :string? = args[1]
 			if not WebHookURL or not args[2] then return end
-
+	
 			local WebHookData = table.concat(args, " ", 2)
-
+	
 			local data = {
 				["content"] = WebHookData;
 				["username"] = "TrezAdmin";
 			}
-
+	
 			local success, response = pcall(function()
 				HttpService:PostAsync(
 					WebHookURL,
@@ -1031,7 +917,7 @@ local script = G2L["4"];
 					Enum.HttpContentType.ApplicationJson
 				)
 			end)
-			
+	
 			if success and response then
 				Notice:Invoke("Webhook sent successfully = "..data.content)
 			else
@@ -1087,7 +973,7 @@ local script = G2L["4"];
 							return v
 						end
 					end
-					
+	
 					local function InvokeF3X(actionName, ...)
 						local F3X = getf3x()
 						if not F3X then
@@ -1096,7 +982,7 @@ local script = G2L["4"];
 						end
 						return F3X.SyncAPI.ServerEndpoint:InvokeServer(actionName, ...)
 					end
-					
+	
 					local success, err = pcall(function()
 						InvokeF3X("remove", {targetPlayer})
 					end)
@@ -1126,45 +1012,45 @@ local script = G2L["4"];
 		end,
 		["char"] = function(args)
 			local Players = game:GetService("Players")
-
+	
 			local function spawnAvatarFromUsername(username)
 				local player = Players.LocalPlayer
-
+	
 				local success, userId = pcall(function()
 					return Players:GetUserIdFromNameAsync(username)
 				end)
-
+	
 				if not success then
 					warn("User not found.")
 					return
 				end
-
+	
 				local success2, description = pcall(function()
 					return Players:GetHumanoidDescriptionFromUserId(userId)
 				end)
-
+	
 				if not success2 then
 					warn("Could not get avatar description.")
 					return
 				end
-
+	
 				local newChar = Players:CreateHumanoidModelFromDescription(description, Enum.HumanoidRigType.R15)
 				newChar.Name = player.Name
 				newChar.Parent = workspace
-
+	
 				player.Character = newChar
 				workspace.CurrentCamera.CameraSubject = newChar:WaitForChild("Humanoid")
-
+	
 				newChar:MoveTo(workspace.CurrentCamera.CFrame.Position)
-
+	
 				Notice:Invoke("your now "..args[1])
 			end
-
+	
 			spawnAvatarFromUsername(args[1])
-
+	
 		end,
 		["antikill"] = function()
-			
+	
 			local player :Players? = game.Players.LocalPlayer
 			local Char = player.Character or player.CharacterAdded:Wait()
 			local Human : Humanoid? = Char["Humanoid"]
@@ -1177,7 +1063,7 @@ local script = G2L["4"];
 					break
 				end
 			end
-			
+	
 		end,
 		["unantikill"] = function()
 			Notice:Invoke("antikill disabled")
@@ -1187,7 +1073,7 @@ local script = G2L["4"];
 			Bright.Brightness = tonumber(args[1])
 			Notice:Invoke("Brightness changed to "..args[1])
 		end,
-		
+	
 		["btools"] = function()
 			local btools = game:GetObjects("rbxassetid://73095244")[5]
 			btools.Parent = game.Players.LocalPlayer.Backpack
@@ -1203,13 +1089,19 @@ local script = G2L["4"];
 				Notice:Invoke("It seems you're not able to call anyone. Sorry!")
 			end
 		end,
+		["cmdbar"] = function()
+			script.Parent.Visible = true
+			script.Parent:CaptureFocus()
+			game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Chat, false)
+		end,
 	}
 	
-	SourceBox.FocusLost:Connect(function(enterPressed)
-		if not enterPressed then return end
-		if SourceBox.Text == "" then return end
 	
-		local args = string.split(SourceBox.Text, " ")
+	
+	script.Parent.FocusLost:Connect(function(enterPressed)
+		if not enterPressed then return end
+		if script.Parent.Text == "" then return end
+		local args = string.split(script.Parent.Text, " ")
 		local cmd = string.lower(args[1])
 		table.remove(args, 1)
 	
@@ -1218,22 +1110,22 @@ local script = G2L["4"];
 		else
 			Notice:Invoke("Unknown command: "..cmd)
 		end
-	
-		SourceBox.Text = ""
+		Source.Text = ""
 	end)
 	
+	game.TextChatService.TextChannels.RBXSystem:SendAsync("type ?cmdbar to show command bar if you prefer using UI or use Chat?")
 	local TextchatService = game:GetService("TextChatService")
 	local TextChatService = game:GetService("TextChatService")
-
+	
 	local TextChatService = game:GetService("TextChatService")
-
+	
 	TextChatService.MessageReceived:Connect(function(msg)
 		local prefix = "?"
 		if string.sub(msg.Text, 1, 1) == prefix then
 			local textWithoutPrefix = string.sub(msg.Text, 2)
 			local firstSpace = string.find(textWithoutPrefix, " ")
 			local cmd, argsText
-
+	
 			if firstSpace then
 				cmd = string.lower(string.sub(textWithoutPrefix, 1, firstSpace - 1))
 				argsText = string.sub(textWithoutPrefix, firstSpace + 1)
@@ -1241,74 +1133,71 @@ local script = G2L["4"];
 				cmd = string.lower(textWithoutPrefix)
 				argsText = "" 
 			end
-
+	
 			if CmdsActions[cmd] then
 				CmdsActions[cmd](argsText) 
 			else
-				Notice:Invoke("Unknown command: "..cmd)
+				if cmd == "cmdbar" then
+					return
+				else
+					Notice:Invoke("Unknown command: "..cmd)
+				end
 			end
 		end
 	end)
-
-
+	
+	
+	
 	
 end;
-task.spawn(C_4);
--- StarterGui.Trez.Frame.TextBox.AnimateService
+task.spawn(C_5);
+-- StarterGui.TrezAdmin.Source.LocalScript
 local function C_6()
 local script = G2L["6"];
-	SourceBox = script.Parent
-	Frame = SourceBox.Parent
-	UserInput = game:GetService("UserInputService")
-	
-	Frame:TweenPosition(UDim2.new(0.825, 0, 0.947, 0))
-	
-	SourceBox:GetPropertyChangedSignal("Text"):Connect(function()
-		if SourceBox.Text == "" then
-			return
-		else
-			Frame:TweenPosition(UDim2.new(0.825, 0, 0.697, 0))
-		end
-	end)
-	
-	
-	SourceBox.Focused:Connect(function()
-		Frame:TweenPosition(UDim2.new(0.825, 0, 0.697, 0))
-	end)
-	
-	
-	SourceBox.FocusLost:Connect(function()
-		Frame:TweenPosition(UDim2.new(0.825, 0, 0.947, 0))
-	end)
-	
-	UserInput.InputBegan:Connect(function(Input)
-		if Input.KeyCode == Enum.KeyCode.Semicolon then
-			Frame:TweenPosition(UDim2.new(0.825, 0, 0.697, 0))
-			SourceBox:CaptureFocus()
-			SourceBox.Text = ""
-		end
-	end)
-	
-	while true do
-		wait(math.random(1,5))
-		if string.find(SourceBox.Text, "") then
-			Frame:TweenPosition(UDim2.new(0.825, 0, 0.947, 0))
-		end
+	function Mobile(frame:TextBox, Icon:ImageLabel)
+		frame:TweenSize(UDim2.new(0.991, 0,0.099, 0))
+		Icon:TweenPosition(UDim2.new(-0.023, 0,0.5, 0))
 	end
 	
+	function PC(frame:TextBox, Icon:ImageLabel)
+		frame:TweenSize(UDim2.new(0.991, 0,0.059, 0))
+		Icon:TweenPosition(UDim2.new(-0.013, 0,0.5, 0))
+	end
+	
+	local _s = game:GetService("UserInputService")
+	
+	if _s.TouchEnabled then
+		Mobile(script.Parent, script.Parent.Icon)
+	else
+		PC(script.Parent, script.Parent.Icon)
+	end
 end;
 task.spawn(C_6);
--- StarterGui.Trez.Notice.InputShow
-local function C_c()
-local script = G2L["c"];
-	Notice = script.Parent.Parent.NoticeFunc
-	Notice.OnInvoke = function(...)
-		script.Parent:TweenPosition(UDim2.new(0.655, 0,0.955, 0))
-		script.Parent.TextLabel.Text = table.concat({...}, " ")
-		wait(5)
-		script.Parent:TweenPosition(UDim2.new(0.655, 0,1.015, 0))
+-- StarterGui.TrezAdmin.Source.Icon.LocalScript
+local function C_a()
+local script = G2L["a"];
+	function FadeIn(frame: ImageLabel)
+		for i = 1, 0.63, -0.1 do
+			frame.ImageTransparency = i
+			wait(0.05)
+		end
 	end
+	
+	function FadeOut(frame: ImageLabel)
+		for i = 0.63, 1, 0.1 do
+			frame.ImageTransparency = i
+			wait(0.05)
+		end
+	end
+	
+	while true do
+		wait(1)
+		FadeIn(script.Parent)
+		wait(1)
+		FadeOut(script.Parent)
+	end
+	
 end;
-task.spawn(C_c);
+task.spawn(C_a);
 
 return G2L["1"], require;
